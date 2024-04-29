@@ -127,9 +127,9 @@ const fast = async (message, session, setSession, setLoading, onTextPlayed, setT
   setSession(json.session)
   const responseText = json.message;
   setText(responseText)
+  setLoading(false)
   console.log(`Fast Response took ${new Date().getTime() - responseTime}ms`);
   await speakText(responseText, onTextPlayed)
-  setLoading(false)
 
 }
 
