@@ -30,6 +30,6 @@ brew install ffmpeg
 Start the development server from the backend folder with
 
 ```
-yarn
-yarn dev
+npm i 
+npm run start
 ```
