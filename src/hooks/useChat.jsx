@@ -135,7 +135,7 @@ const fast = async (message, session, setSession, setLoading, onTextPlayed, setT
 
 
 function makeChunksOfText(text) {
-  const maxLength = 190;
+  const maxLength = 140;
   let speechChunks = [];
 
   // Split the text into chunks of maximum length maxLength without breaking words
@@ -165,6 +165,7 @@ function makeChunksOfText(text) {
 
 async function speakText(text, onTextPlayed) {
   const speechChunks = makeChunksOfText(text)
+  console.log('broken into chunks', speechChunks)
   for (let i = 0; i < speechChunks.length; i++) {
     await new Promise((resolve, reject) => {
       window.speechSynthesis.cancel();
