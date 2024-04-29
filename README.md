@@ -1,4 +1,4 @@
-# Avatar-three.js
+# Brewella.js
 
 a three.js avatar that lipsyncs text to speech
 
@@ -11,9 +11,15 @@ yarn dev
 
 ## back end Setup
 
-Create a `.env` file at the root of the backend folder to add your**ElevenLabs API Key**. Refer to `.env.example` for the environment variable names.
-
+Create a `.env` file at the root of the backend folder with the following values:
+```
+ELEVEN_LABS_API_KEY=
+ELEVEN_LABS_VOICE_ID=
+OPEN_AI_KEY=
+OPEN_AI_ASSISTANT_ID=
+```
 https://elevenlabs.io/
+https://platform.openai.com/
 
 install ffmpeg
 
@@ -21,11 +27,9 @@ install ffmpeg
 brew install ffmpeg
 ```
 
-Download the **RhubarbLibrary** binary for your **OS** [here](https://github.com/DanielSWolf/rhubarb-lip-sync/releases) and put it in your `bin` folder. `rhubarb` executable should be accessible through `usr/local/bin/rb/rhubarb`.
-
 Start the development server from the backend folder with
 
 ```
-yarn
-yarn dev
+npm i 
+npm run start
 ```
