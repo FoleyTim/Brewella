@@ -12,11 +12,12 @@ yarn dev
 ## back end Setup
 
 Create a `.env` file at the root of the backend folder with the following values:
+```
 ELEVEN_LABS_API_KEY=
 ELEVEN_LABS_VOICE_ID=
 OPEN_AI_KEY=
 OPEN_AI_ASSISTANT_ID=
-
+```
 https://elevenlabs.io/
 https://platform.openai.com/
 
