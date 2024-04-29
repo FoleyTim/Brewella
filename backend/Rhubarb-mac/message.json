@@ -1,0 +1,16 @@
+{
+  "metadata": {
+    "soundFile": "/Users/timfoley/Downloads/Rhubarb-Lip-Sync-1.13.0-macOS 3/message.wav",
+    "duration": 1.25
+  },
+  "mouthCues": [
+    { "start": 0.00, "end": 0.05, "value": "B" },
+    { "start": 0.05, "end": 0.17, "value": "C" },
+    { "start": 0.17, "end": 0.38, "value": "B" },
+    { "start": 0.38, "end": 0.52, "value": "C" },
+    { "start": 0.52, "end": 0.73, "value": "B" },
+    { "start": 0.73, "end": 0.87, "value": "C" },
+    { "start": 0.87, "end": 1.22, "value": "B" },
+    { "start": 1.22, "end": 1.25, "value": "X" }
+  ]
+}
