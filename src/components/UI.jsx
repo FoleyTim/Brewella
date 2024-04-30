@@ -5,12 +5,13 @@ import SpeechRecognition, {
   useSpeechRecognition,
 } from "react-speech-recognition";
 import { Settings } from "./Settings";
+const loadingAudio = new Audio("/audio/loading.mp3");
 
 export const UI = () => {
   const { chat, loading, message, session, text } = useChat();
   const [isRecording, setIsRecording] = useState(false);
   const [userMessage, setUserMessage] = useState('');
-  const [performance, setPerformance] = useState('Quality');
+  const [performance, setPerformance] = useState('Fast');
   const [keyDown, setKeyDown] = useState(false);
   const recordingOnAudio = new Audio("/audio/siriOn.mp3");
   const recordingOffAudio = new Audio("/audio/siriOff.mp3");
@@ -65,6 +66,15 @@ export const UI = () => {
       setUserMessage(transcript)
     }
   }, [transcript]);
+
+  useEffect(() => {
+    if(loading){
+      loadingAudio.loop = true;
+      loadingAudio.play();
+    }else{
+      loadingAudio.pause()
+    }
+  }, [loading]);
 
   if (!browserSupportsSpeechRecognition) {
     return <span>Browser doesn't support speech recognition.</span>;
