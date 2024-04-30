@@ -23,11 +23,12 @@ export async function sendMessageToOpenAI(session, message, callBack) {
     const run = openai.beta.threads.runs.stream(session, {
         assistant_id: process.env.OPEN_AI_ASSISTANT_ID
     })
-        .on('textCreated', (text) => process.stdout.write('\nassistant > '))
         .on('textDelta', (textDelta, snapshot) => {
             openAIResponse += textDelta.value
         })
         .on('end', () => {
+            //remove emojis
+            openAIResponse = openAIResponse.replace(/([\u2700-\u27BF]|[\uE000-\uF8FF]|\uD83C[\uDC00-\uDFFF]|\uD83D[\uDC00-\uDFFF]|[\u2011-\u26FF]|\uD83E[\uDD10-\uDDFF])/g, '');
             callBack(openAIResponse, session)
         });
 }

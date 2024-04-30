@@ -26,7 +26,6 @@ export async function streamTTSAudio(message) {
 
 
 export async function downloadTTSAudio(message) {
-
     const voiceTime = new Date().getTime();
     console.log(`Downloading ElevenLabs audio`);
     await voice.textToSpeech({

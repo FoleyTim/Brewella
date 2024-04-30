@@ -62,8 +62,8 @@ app.post("/quality", async (req, res) => {
   const callback = async (message, session) => {
     await downloadTTSAudio(message)
     const mp3Stream = fs.createReadStream('audio/message.mp3')
-
     const lipsyncData = await textToSpeech()
+    
     res.set({
       "Content-Type": "audio/mpeg",
       "Content-Disposition": `inline; filename=tts.mp3`,
@@ -85,7 +85,6 @@ app.post("/quality", async (req, res) => {
     mp3Stream.on('end', () => {
       res.end();
     });
-
   }
   await sendMessageToOpenAI(session, message, callback)
 })

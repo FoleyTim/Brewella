@@ -165,7 +165,6 @@ function makeChunksOfText(text) {
 
 async function speakText(text, onTextPlayed) {
   const speechChunks = makeChunksOfText(text)
-  console.log('broken into chunks', speechChunks)
   for (let i = 0; i < speechChunks.length; i++) {
     await new Promise((resolve, reject) => {
       window.speechSynthesis.cancel();

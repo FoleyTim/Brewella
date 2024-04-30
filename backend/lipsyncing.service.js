@@ -10,7 +10,6 @@ export async function lipSyncMessage() {
         // -y to overwrite the file
     );
     console.log(`Conversion took ${new Date().getTime() - conversionTime}ms`);
-    //Delete wav
 
     const lipSyncTime = new Date().getTime();
     console.log(`Starting Lipsync`);
